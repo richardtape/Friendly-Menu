@@ -1,0 +1,78 @@
+;(function($) {
+
+	$.friendlyMenu = function(el, options) {
+	
+		var defaults = {
+			selector: '#nav',
+			autoAlign: false
+		}
+		
+		var plugin = this;
+		
+		plugin.settings = {}
+		
+		var init = function() {
+			
+			plugin.settings = $.extend({}, defaults, options);
+			plugin.el = el;
+			
+			var selector = plugin.el ? plugin.el.selector : plugin.settings.selector;
+			
+			//$(selector + " ul").css({display: "none"});		//Opera…why you so not working?
+			$(selector + " a").removeAttr("title");			//Title hover styles can cause problems
+			
+			if(plugin.el && plugin.el.autoAlign){
+            	
+            	$(selector + '>li').has('ul').each(function(){
+            		
+            			//If the hovered menu would cause a horizontal scrollbar, force it to go the left, not right
+						var ww = $(window).width();
+	           	 		var subUL = $(this).find("ul:first");
+	            		var locUL = subUL.offset().left + subUL.width();
+	            		
+	            		console.log( locUL );
+
+						if( $('body').hasClass('ie') ){
+							$(this).addClass("goleft");
+						}
+	            		
+	            		if (locUL > ww) {
+	            			$(this).addClass("goleft");
+	            		}
+             		
+            	});
+				
+			}
+			
+			$(selector + " li").hover(function(){
+			
+				$(this).find('ul:first').css({visibility: "visible", display: "none"}).fadeIn(300);
+			
+			},function(){
+			
+				$(this).find('ul:first').css({visibility: "hidden"});
+			
+			});
+			
+			//Add a class to the 'main' menu item when we're hovering over one of its children
+			$(selector + " > li > ul").hover(function(){
+			
+				$(this).parent().addClass("hovering");
+			
+			},function(){
+			
+				$(this).parent().removeClass("hovering");
+			
+			});
+		
+		}
+		
+		init();
+	
+	}
+
+})(jQuery);
+
+$(document).ready(function(){
+	var myplugin = new $.friendlyMenu({selector: "#nav", autoAlign: true});
+});
