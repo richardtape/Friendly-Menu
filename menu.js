@@ -30,13 +30,16 @@
 	           	 		var subUL = $(this).find("ul:first");
 	            		var locUL = subUL.offset().left + subUL.width();
 	            		
-	            		console.log( locUL );
+	            		//We're storing things 9999px off-screen. Do some maths
+	            		//Having to guess a bit. If you're having issues, change this number
+	            		var newPos = 9499 + locUL;
+	            		console.log( "Pos: " + newPos + " :: " + "Window Width: " + ww );
 
 						if( $('body').hasClass('ie') ){
 							$(this).addClass("goleft");
 						}
 	            		
-	            		if (locUL > ww) {
+	            		if (newPos > ww) {
 	            			$(this).addClass("goleft");
 	            		}
              		
