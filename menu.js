@@ -35,6 +35,7 @@
 	            		var newPos = 9499 + locUL;
 	            		console.log( "Pos: " + newPos + " :: " + "Window Width: " + ww );
 
+						//IE just gets everything wrong. Everything. So you *could* force everything to go left in IE?
 						if( $('body').hasClass('ie') ){
 							$(this).addClass("goleft");
 						}
