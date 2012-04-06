@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Friendly-menu by iamfriendly</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Friendly-menu</h1>
+        <p>CSS Hover Menu for IE7+ and proper browsers, enhanced with some jQuery</p>
+        <p class="view"><a href="https://github.com/iamfriendly/Friendly-Menu">View the Project on GitHub <small>iamfriendly/Friendly-Menu</small></a></p>
+        <ul>
+          <li><a href="https://github.com/iamfriendly/Friendly-Menu/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/iamfriendly/Friendly-Menu/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/iamfriendly/Friendly-Menu">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>Friendly Menu</h3>
+
+<p>Well, it's a progressively enhanced (I know, in 2012, and it doesn't even have any parallax effects... for shame), IE7+ (and proper browsers, obviously) CSS drop down menu that gets a bit of the jQuery treatment, mainly because I'm not a good enough raw javascript coder to make the magic happen.</p>
+
+<pre><code>$(document).ready(function(){
+    var my_awesome_menu = new $.friendlyMenu({selector: "#nav", autoAlign: true});
+});
+</code></pre>
+
+<p>Pass it a selector (it defaults to #nav) and tell it if you want it to 'autoAlign' or not. autoAlign basically tries to guess as to whether the dropdowns should go to the left or to the right dependent on how close they are to the edge of the screen.</p>
+
+<h3>Support or Contact</h3>
+
+<p>Don't think you really need much support for this but I'd love someone to make this...better. It's very terse at the moment and basically guesses quite a lot. Which is rubbish. Also, IE is a joke. That is all.</p>
+
+<h3>Oh you want a demo?</h3>
+
+<p>Go on then: <a href="http://iamfriendly.com/playpen/menu/menu.html">http://iamfriendly.com/playpen/menu/menu.html</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/iamfriendly">iamfriendly</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
